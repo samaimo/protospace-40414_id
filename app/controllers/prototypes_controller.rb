@@ -4,6 +4,7 @@ class PrototypesController < ApplicationController
   def index
     if user_signed_in?
       @name = current_user.name
+    else
       @prototypes = Prototype.includes(:user)
     end
   end
